@@ -4,9 +4,11 @@ page {
   background-color: #f0f9f4;
 }
 .container {
+  width: 100%;
   min-height: 100vh;
   padding: 20rpx 0 calc(140rpx + env(safe-area-inset-bottom));
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* 统计卡片 */
@@ -78,11 +80,12 @@ page {
 }
 .dish-item {
   display: flex;
-  gap: 24rpx;
-  padding: 24rpx;
-  margin: 0 24rpx 24rpx 24rpx;
-  width: auto;
+  gap: 20rpx;
+  padding: 20rpx;
+  margin: 0 24rpx 20rpx 24rpx;
+  width: calc(100% - 48rpx);
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .item-img {
@@ -95,9 +98,11 @@ page {
 
 .item-info {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .item-header {

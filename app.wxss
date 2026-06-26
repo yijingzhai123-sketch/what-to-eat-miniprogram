@@ -35,6 +35,9 @@ page {
   box-shadow: 0 4rpx 20rpx rgba(136, 201, 163, 0.15);
   margin: 24rpx;
   padding: 30rpx;
+  width: calc(100% - 48rpx);
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .flex-center {
