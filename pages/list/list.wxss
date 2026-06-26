@@ -136,7 +136,7 @@ page {
 .item-actions {
   display: flex;
   gap: 16rpx;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .action-btn {
