@@ -19,21 +19,15 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "今日选菜",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-active.png"
+        "text": "今日选菜"
       },
       {
         "pagePath": "pages/list/list",
-        "text": "我的菜品",
-        "iconPath": "images/list.png",
-        "selectedIconPath": "images/list-active.png"
+        "text": "我的菜品"
       },
       {
         "pagePath": "pages/add/add",
-        "text": "添加菜品",
-        "iconPath": "images/add.png",
-        "selectedIconPath": "images/add-active.png"
+        "text": "添加菜品"
       }
     ]
   },

@@ -1,6 +1,12 @@
 /* 添加菜品页面样式 */
+page {
+  height: 100%;
+  background-color: #f0f9f4;
+}
 .container {
-  padding: 20rpx 0;
+  min-height: 100vh;
+  padding: 20rpx 0 calc(140rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 .add-card {

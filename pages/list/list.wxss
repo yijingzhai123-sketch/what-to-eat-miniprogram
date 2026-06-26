@@ -1,6 +1,12 @@
 /* 菜品列表页面样式 */
+page {
+  height: 100%;
+  background-color: #f0f9f4;
+}
 .container {
-  padding: 20rpx 0 40rpx;
+  min-height: 100vh;
+  padding: 20rpx 0 calc(140rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
 }
 
 /* 统计卡片 */
@@ -122,10 +128,12 @@
 
 .action-btn {
   font-size: 24rpx;
-  padding: 10rpx 24rpx;
+  padding: 10rpx 20rpx;
   border-radius: 30rpx;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.4;
+  min-height: auto;
+  height: auto;
 }
 
 .choose-btn {
