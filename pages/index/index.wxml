@@ -1,0 +1,67 @@
+<!-- 首页 随机选菜 -->
+<view class="container">
+  <!-- 顶部装饰 -->
+  <view class="header-deco"></view>
+
+  <!-- 标题区域 -->
+  <view class="title-section">
+    <text class="title">今天吃什么？</text>
+    <text class="subtitle">让选择困难症消失✨</text>
+  </view>
+
+  <!-- 选菜转盘/展示区域 -->
+  <view class="dish-show-area card">
+    <view class="dish-card" wx:if="{{selectedDish}}">
+      <image class="dish-image" src="{{selectedDish.image}}" mode="aspectFill"></image>
+      <view class="dish-info">
+        <text class="dish-name">{{selectedDish.name}}</text>
+        <text class="dish-tag" wx:if="{{selectedDish.tag}}">{{selectedDish.tag}}</text>
+      </view>
+    </view>
+    <view class="empty-tip flex-center" wx:else>
+      <text>{{rolling ? rollingDish.name : '点击下方按钮开始选菜'}}</text>
+    </view>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="btn-section">
+    <button class="roll-btn btn-primary" bindtap="rollDish" disabled="{{rolling}}">
+      {{rolling ? '选菜中...' : '帮我选一个！'}}
+    </button>
+    <button class="again-btn btn-secondary" bindtap="resetRoll" wx:if="{{selectedDish}}">
+      再选一次
+    </button>
+  </view>
+
+  <!-- 今日已选提示 -->
+  <view class="today-record card" wx:if="{{todayDish}}">
+    <view class="record-header flex-between">
+      <text class="record-title">今日选择</text>
+      <text class="record-date">{{todayDate}}</text>
+    </view>
+    <view class="record-dish flex-between">
+      <view class="record-info flex-center">
+        <image class="record-img" src="{{todayDish.image}}" mode="aspectFill"></image>
+        <text class="record-name">{{todayDish.name}}</text>
+      </view>
+      <button class="change-btn btn-secondary" bindtap="changeToday">换一个</button>
+    </view>
+  </view>
+
+  <!-- 最近选择记录 -->
+  <view class="history-section card" wx:if="{{historyList.length > 0}}">
+    <text class="history-title">最近吃过</text>
+    <scroll-view scroll-x="true" class="history-scroll">
+      <view class="history-item" wx:for="{{historyList}}" wx:key="id">
+        <image class="history-img" src="{{item.image}}" mode="aspectFill"></image>
+        <text class="history-name">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 引导添加菜品 -->
+  <view class="guide-tip" wx:if="{{dishCount < 3}}">
+    <text>菜品太少啦，去添加更多爱吃的菜吧👇</text>
+    <navigator url="/pages/add/add" class="add-link">去添加</navigator>
+  </view>
+</view>

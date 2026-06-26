@@ -1,0 +1,48 @@
+<!-- 添加菜品页面 -->
+<view class="container">
+  <view class="add-card card">
+    <!-- 图片上传区域 -->
+    <view class="upload-section">
+      <text class="section-title">菜品图片 <text class="required">*</text></text>
+      <view class="upload-area" bindtap="chooseImage">
+        <image class="preview-img" wx:if="{{formData.image}}" src="{{formData.image}}" mode="aspectFill"></image>
+        <view class="upload-placeholder flex-center" wx:else>
+          <view class="plus-icon">+</view>
+          <text class="upload-tip">点击上传菜品图片</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- 菜品名称输入 -->
+    <view class="input-section">
+      <text class="section-title">菜品名称 <text class="required">*</text></text>
+      <input class="input-field" placeholder="比如：番茄炒蛋、麻辣香锅..." value="{{formData.name}}" bindinput="onNameInput" maxlength="20" />
+    </view>
+
+    <!-- 标签选择 -->
+    <view class="tag-section">
+      <text class="section-title">分类标签</text>
+      <view class="tag-list">
+        <view class="tag-item {{formData.tag === item ? 'active' : ''}}" wx:for="{{tagOptions}}" wx:key="index" bindtap="selectTag" data-tag="{{item}}">
+          {{item}}
+        </view>
+        <input class="tag-input" placeholder="自定义标签" value="{{customTag}}" bindinput="onTagInput" wx:if="{{showCustomTag}}" />
+        <view class="tag-item custom-tag" bindtap="toggleCustomTag" wx:else>+ 自定义</view>
+      </view>
+    </view>
+
+    <!-- 备注可选 -->
+    <view class="input-section">
+      <text class="section-title">备注（选填）</text>
+      <textarea class="textarea-field" placeholder="可以写口味、食材、做法等..." value="{{formData.remark}}" bindinput="onRemarkInput" maxlength="100" auto-height />
+    </view>
+
+    <!-- 提交按钮 -->
+    <button class="save-btn btn-primary" bindtap="saveDish" disabled="{{!canSave}}">保存到我的菜品</button>
+  </view>
+
+  <!-- 小提示 -->
+  <view class="tip-card">
+    <text class="tip-text">💡 提示：上传的菜品可以在"我的菜品"页面查看、编辑或删除，所有数据都存在你本地手机上，不会上传到服务器哦~</text>
+  </view>
+</view>

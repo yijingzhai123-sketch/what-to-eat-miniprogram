@@ -1,0 +1,50 @@
+/* 全局样式 清新自然风格 */
+page {
+  background-color: #f0f9f4;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  color: #333;
+}
+
+/* 通用按钮样式 */
+.btn-primary {
+  background: linear-gradient(135deg, #88c9a3 0%, #5ab47e 100%);
+  color: white;
+  border-radius: 50rpx;
+  border: none;
+  font-size: 32rpx;
+  padding: 20rpx 60rpx;
+  box-shadow: 0 8rpx 20rpx rgba(88, 180, 126, 0.2);
+}
+
+.btn-primary:active {
+  opacity: 0.8;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #5ab47e;
+  border: 2rpx solid #88c9a3;
+  border-radius: 50rpx;
+  font-size: 30rpx;
+  padding: 16rpx 40rpx;
+}
+
+.card {
+  background-color: white;
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(136, 201, 163, 0.15);
+  margin: 24rpx;
+  padding: 30rpx;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
