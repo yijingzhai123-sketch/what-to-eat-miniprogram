@@ -15,6 +15,9 @@ page {
   align-items: center;
   justify-content: space-around;
   padding: 30rpx 20rpx;
+  margin: 20rpx 24rpx 24rpx 24rpx;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .stats-item {
@@ -42,11 +45,14 @@ page {
 /* 筛选区域 */
 .filter-section {
   padding: 0 24rpx;
-  margin-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .tag-scroll {
   white-space: nowrap;
+  width: 100%;
 }
 
 .filter-tag {
@@ -66,10 +72,17 @@ page {
 }
 
 /* 菜品列表 */
+.dish-list {
+  width: 100%;
+  box-sizing: border-box;
+}
 .dish-item {
   display: flex;
   gap: 24rpx;
   padding: 24rpx;
+  margin: 0 24rpx 24rpx 24rpx;
+  width: auto;
+  box-sizing: border-box;
 }
 
 .item-img {
